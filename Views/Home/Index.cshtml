@@ -1,0 +1,37 @@
+﻿@using static mHtmlHelpers;
+@model FileInfo2
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+<head>
+    <style>
+        
+    </style>
+    @* <link rel="stylesheet" href="mainstyle.css"> *@
+</head>
+<div class="text-center">
+    
+    <input type="file" name="aFile" id="fileInputInput" onchange="alert(this.)">
+
+    @if(Model!= null)
+    {
+        <h1>Model.FileName</h1>
+    }
+
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+@* <script src="../contents/js/mainJs01.js"></script> *@
+@* <script src="aaa.js"></script> *@
+@* @using System.Web.Optimization
+@Scripts.Render("~/Content/css")
+@Scripts.Render("~/bundles/modernizr")
+@Scripts.Render("~/bundles/myScripts") *@
+    @* <link rel="stylesheet" href="~/contents/css/mainstyle.css"> *@
+
+<!-- 引入 CSS -->
+@Html.RenderStyles("~/contents/css/mainstyle.css")
+
+<!-- 引入 JS -->
+@Html.RenderScripts("~/contents/js/mainJs01.js")
