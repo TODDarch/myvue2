@@ -65,7 +65,7 @@ public class HomeController : Controller
         // FileInfo2 model = new FileInfo2();
         // // model.FileName = file.FileName;
         
-        await System.IO.File.AppendAllTextAsync("","" );
+        await System.IO.File.AppendAllTextAsync( Path.Combine(@"C:\proj\aa.txt"),"" );
 
         return View("Index");
         // return View("Index", model);
