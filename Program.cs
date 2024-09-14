@@ -16,8 +16,8 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseStaticFiles();
-app.UseStaticFiles("~/contents/css");
-app.UseStaticFiles("~/contents/javascript");
+// app.UseStaticFiles("/contents/css");
+// app.UseStaticFiles("/contents/javascript");
 
 app.UseRouting();
 

@@ -1,0 +1,5 @@
+https://learn.microsoft.com/en-us/aspnet/core/fundamentals/static-files?view=aspnetcore-8.0
+1modify tje right action entry >> api 
+>> use ROUTEING >> put HOME to more accurate PATH, HOME page for "testpage" only
+
+usen GRP LNX SEARCH FILE:  https://learn.microsoft.com/en-us/aspnet/core/mvc/models/file-uploads?view=aspnetcore-8.0

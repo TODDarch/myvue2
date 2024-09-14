@@ -103,6 +103,9 @@ window.addEventListener("DOMContentLoaded", (event) => {
         }
       
         function uploadFile(file) {
+          alert('sending')
+          alert(file.name);
+          alert(file);
       
           var xhr = new XMLHttpRequest(),
             fileInput = document.getElementById('class-roster-file'),
@@ -131,7 +134,12 @@ window.addEventListener("DOMContentLoaded", (event) => {
               xhr.setRequestHeader('X-File-Name', file.name);
               xhr.setRequestHeader('X-File-Size', file.size);
               xhr.setRequestHeader('Content-Type', 'multipart/form-data');
-              xhr.send(file);
+              //
+              // xhr.send(file);
+
+              // 
+              xhr.send(new FormData(document.getElementById('file-upload-form')));
+
             } else {
               output('Please upload a smaller file (< ' + fileSizeLimit + ' MB).');
             }

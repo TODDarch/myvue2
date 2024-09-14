@@ -12,7 +12,26 @@
 </head>
 <div class="text-center">
     
-    <input type="file" name="aFile" id="fileInputInput" onchange="alert(this.)">
+    <form action="BufferedSingleFileUploadPhysical/?handler=Upload" 
+      enctype="multipart/form-data" onsubmit="AJAXSubmit(this);return false;" 
+      method="post">
+    <dl>
+        <dt>
+            <label for="FileUpload_FormFile">File</label>
+        </dt>
+        <dd>
+            <input id="FileUpload_FormFile" type="file" 
+                name="FileUpload.FormFile"/>
+                @* <input asp-for="FileUpload.FormFiles" type="file" multiple /> *@
+        </dd>
+    </dl>
+
+    <input class="btn" type="submit" value="Upload" />
+
+    <div style="margin-top:15px">
+        <output name="result"></output>
+    </div>
+</form>
 
     @if(Model!= null)
     {
@@ -22,16 +41,50 @@
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
-@* <script src="../contents/js/mainJs01.js"></script> *@
 @* <script src="aaa.js"></script> *@
 @* @using System.Web.Optimization
-@Scripts.Render("~/Content/css")
 @Scripts.Render("~/bundles/modernizr")
 @Scripts.Render("~/bundles/myScripts") *@
-    @* <link rel="stylesheet" href="~/contents/css/mainstyle.css"> *@
+
+
+<script>
+  async function AJAXSubmit (oFormElement) {
+    var resultElement = oFormElement.elements.namedItem("result");
+    const formData = new FormData(oFormElement);
+
+    try {
+    const response = await fetch(oFormElement.action, {
+      method: 'POST',
+      body: formData
+    });
+
+    if (response.ok) {
+      window.location.href = '/';
+    }
+
+    resultElement.value = 'Result: ' + response.status + ' ' + 
+      response.statusText;
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  }
+</script>
+<script>
+  "use strict";
+
+  function AJAXSubmit (oFormElement) {
+    var oReq = new XMLHttpRequest();
+    oReq.onload = function(e) { 
+    oFormElement.elements.namedItem("result").value = 
+      'Result: ' + this.status + ' ' + this.statusText;
+    };
+    oReq.open("post", oFormElement.action);
+    oReq.send(new FormData(oFormElement));
+  }
+</script>
 
 <!-- 引入 CSS -->
-@Html.RenderStyles("~/contents/css/mainstyle.css")
+@* @Html.RenderStyles("~/contents/css/mainstyle.css") *@
 
 <!-- 引入 JS -->
-@Html.RenderScripts("~/contents/js/mainJs01.js")
+@* @Html.RenderScripts("~/contents/js/mainJs01.js") *@

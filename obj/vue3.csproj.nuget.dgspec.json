@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "d:\\proj\\vue3\\vue3.csproj": {}
+    "c:\\proj\\myvue2\\vue3.csproj": {}
   },
   "projects": {
-    "d:\\proj\\vue3\\vue3.csproj": {
+    "c:\\proj\\myvue2\\vue3.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "d:\\proj\\vue3\\vue3.csproj",
+        "projectUniqueName": "c:\\proj\\myvue2\\vue3.csproj",
         "projectName": "vue3",
-        "projectPath": "d:\\proj\\vue3\\vue3.csproj",
-        "packagesPath": "C:\\Users\\growi\\.nuget\\packages\\",
-        "outputPath": "d:\\proj\\vue3\\obj\\",
+        "projectPath": "c:\\proj\\myvue2\\vue3.csproj",
+        "packagesPath": "C:\\Users\\88690\\.nuget\\packages\\",
+        "outputPath": "c:\\proj\\myvue2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\growi\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\88690\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -34,6 +32,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -58,7 +61,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.401/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
